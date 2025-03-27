@@ -25,8 +25,8 @@ function App() {
 
   return (
     <APIProvider apiKey={API_KEY}>
-      <UserProvider>
-        <Router>
+      <Router>
+        <UserProvider>
           <NavBar />
           <Routes>
             <Route path="/signup" element={<SignupForm />} />
@@ -35,8 +35,8 @@ function App() {
             <Route path="/profile" element={<ProfileForm />} />
             <Route path="/" element={<Home />} />
           </Routes>
-        </Router>
-      </UserProvider>
+        </UserProvider>
+      </Router>
     </APIProvider>
   );
 }

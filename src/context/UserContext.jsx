@@ -1,9 +1,11 @@
 import { createContext, useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 import MidpointApi from "../services/api";  // Ensure this is the correct path
 
 const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
+  const navigate = useNavigate();
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true); // Track loading state
 
@@ -26,6 +28,7 @@ export const UserProvider = ({ children }) => {
     setUser(null);
     localStorage.removeItem("user");
     MidpointApi.token = null;
+    navigate("/login");
   };
 
   return (

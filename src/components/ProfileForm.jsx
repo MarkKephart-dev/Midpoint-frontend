@@ -36,11 +36,8 @@ const Profile = () => {
     e.preventDefault();
     try {
       const updatedUser = await MidpointApi.updateProfile(user.username, { email: formData.email });
-      console.log("Updated user:", updatedUser);
       setUser(updatedUser);
-      console.log("User updated in context:", user); 
       navigate("/");
-      console.log("after navigate");
     } catch (err) {
       setError("An error occurred while updating the profile.");
     }
