@@ -1,0 +1,37 @@
+.home-container {
+    display: flex;
+    gap: 20px; /* Space between left and right sections */
+    padding: 20px;
+  }
+  
+  .left-section {
+    flex: 2; 
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+    align-items: flex-start; 
+  }
+  
+  .address-container {
+    margin-bottom: 20px; 
+  }
+
+  .midpoint-container {
+    text-align: center; /* Centers the text */
+    width: 100%; /* Ensures it spans the full width of its container */
+    margin: 0 auto; /* Centers the div horizontally */
+    padding: 10px 0;
+  }
+  
+  .map-container {
+    width: 100%;
+    height: 400px; /* Adjust height as needed */
+  }
+  
+  .right-section {
+    flex: 2; /* Takes up less space */
+    max-height: 700px; /* Set max height for scrolling */
+    overflow-y: auto; /* Enable scrolling */
+    border-left: 2px solid #ddd; /* Optional: separator */
+    padding-left: 20px;
+  }

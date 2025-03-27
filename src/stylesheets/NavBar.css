@@ -1,0 +1,57 @@
+.navbar {
+    position: fixed;
+    width: calc(100% - 40px); /* Prevents it from covering the scrollbar */
+    top: 0;
+    left: 0;
+    background-color: #000;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    z-index: 1000;
+}
+
+.brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+
+.navLinks {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.link {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.link:hover {
+    color: #1e90ff;
+}
+
+.signupButton, .logoutButton {
+    background-color: #1e90ff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.signupButton:hover, .logoutButton:hover {
+    background-color: #0073e6;
+}
+
+  /* Ensures page content doesn't get hidden behind navbar */
+body {
+    padding-top: 60px;
+}
