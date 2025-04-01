@@ -4,7 +4,7 @@ import Home from "./components/Home";
 import { useLoadScript } from "@react-google-maps/api";
 import { APIProvider } from "@vis.gl/react-google-maps";
 import NavBar from "./components/NavBar";
-import Locations from "./components/Locations";
+import LocationList from "./components/LocationList";
 import SignupForm from "./components/SignupForm";
 import LoginForm from "./components/LoginForm";
 import { UserProvider } from "./context/UserContext";
@@ -31,7 +31,7 @@ function App() {
           <Routes>
             <Route path="/signup" element={<SignupForm />} />
             <Route path="/login" element={<LoginForm />} />
-            <Route path="/locations" element={<Locations />} />
+            <Route path="/locations" element={<LocationList />} />
             <Route path="/profile" element={<ProfileForm />} />
             <Route path="/" element={<Home />} />
           </Routes>

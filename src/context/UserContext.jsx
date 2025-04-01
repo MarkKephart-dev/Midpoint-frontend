@@ -10,7 +10,7 @@ export const UserProvider = ({ children }) => {
   const [loading, setLoading] = useState(true); // Track loading state
 
   useEffect(() => {
-    const storedUser = JSON.parse(localStorage.getItem("user"));
+    const storedUser = JSON.parse(sessionStorage.getItem("user"));
     if (storedUser) {
       setUser(storedUser);
       MidpointApi.token = storedUser.token;
@@ -20,13 +20,13 @@ export const UserProvider = ({ children }) => {
 
   const login = (userData) => {
     setUser(userData);
-    localStorage.setItem("user", JSON.stringify(userData));
+    sessionStorage.setItem("user", JSON.stringify(userData));
     MidpointApi.token = userData.token;
   };
 
   const logout = () => {
     setUser(null);
-    localStorage.removeItem("user");
+    sessionStorage.removeItem("user");
     MidpointApi.token = null;
     navigate("/login");
   };

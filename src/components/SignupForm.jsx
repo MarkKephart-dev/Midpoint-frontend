@@ -14,12 +14,30 @@ const SignupForm = () => {
   });
   const [error, setError] = useState(null);
 
+  const validateForm = () => {
+    const { username, password, email } = formData;
+    if (username.length < 6) return "Username must be at least 6 characters.";
+    if (password.length < 6) return "Password must be at least 6 characters.";
+    
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) return "Invalid email format.";
+
+    return null; // No errors
+  };
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const validationError = validateForm();
+    if (validationError) {
+      setError(validationError);
+      return;
+    }
+    
     try {
       const response = await MidpointApi.signup(formData);
       const { user, token } = response;
